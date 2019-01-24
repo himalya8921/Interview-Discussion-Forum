@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+   <h1><%=data.title%></h1>
+   <%scale= '/storeans/'+ data._id%>
+   <form action=<%=scale%> method="POST">
+       <input type="text" name="userans">
+       <button type="submit">submit answer</button>
+   </form>
+</body>
+</html>

@@ -1,0 +1,74 @@
+        <html>
+          <head>
+        <style>
+          #user{
+          border-style: double
+          }
+        table{
+          border-collapse: collapse;
+        }
+        table, th, td {
+          border: 1px solid black;
+        }
+      
+        div{
+          }
+        </style>
+        </head>
+          <body bgcolor="grey">
+            <table height="100%" width="100%">
+            
+          <tr height="20%">
+                <td>
+              <h2>HI <%=userData.username%></h2>
+            
+                </td> 
+
+                <td><h1 style="text-align:center">Welcome to Quora</h1>
+                  <form action="/a" method="POST">
+    
+                <input type="text" name="tagname"><BR>
+                
+              
+                <button type="submit">click me</button>
+                </form>
+          </tr>
+
+          <tr>
+                <td><P>ASK A QUESTION</P>
+                  <a href="/askques">ASK QUES</a><br><br><a href="/">logout</a>
+                  </td>
+               <td>
+                  <ul> 
+                <%if(typeof data == 'object' && data){%>
+                  <% for(var d of data){ %>
+                    <li><%=d.questionedby.username%> questioned</li>
+                    <li><%=d.title%></li><br>
+                    <% for(var a of d.answer){ %>
+                      <li><%=a.name%> answered <%=a.ans%></li>
+                       <%}%>
+                  
+                    <%scale= '/answer/'+ d._id%>
+                
+                    <a href=<%=scale%>>CLICK TO ANSWER</a>
+                    <br><br>
+                    
+              
+                    <%}%>
+                  <%}%>
+      
+
+
+
+
+                </ul>
+               </td> 
+          </tr>
+            </table>
+            
+          </body>
+          
+        </html>
+
+
+
